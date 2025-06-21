@@ -18,7 +18,36 @@ pwd = 'Nithinp@10'
 # Database connection helper
 def get_connection():
     return psycopg2.connect(DATABASE_URL)
+def create_tables():
+    conn = get_connection()
+    cur = conn.cursor()
 
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS bank_account (
+            account_number BIGINT PRIMARY KEY,
+            account_holder_name TEXT NOT NULL,
+            username TEXT UNIQUE NOT NULL,
+            balance NUMERIC DEFAULT 0,
+            password TEXT NOT NULL
+        )
+    """)
+
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS transactions (
+            id SERIAL PRIMARY KEY,
+            account_number BIGINT REFERENCES bank_account(account_number),
+            type TEXT,
+            amount NUMERIC,
+            timestamp TIMESTAMP DEFAULT NOW(),
+            remarks TEXT
+        )
+    """)
+
+    conn.commit()
+    conn.close()
+
+# Call this once when your app starts
+create_tables()
 # Classes for Bank and BankAccount
 class BankAccount:
     def __init__(self, account_number, name, username, password, balance=0):
