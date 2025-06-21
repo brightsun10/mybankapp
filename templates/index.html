@@ -2,14 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SBI Bank</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient-light: linear-gradient(to right, #e0eafc, #cfdef3);
+      --bg-gradient-dark: linear-gradient(to right, #2b5876, #4e4376);
+      --card-bg-light: #fff;
+      --card-bg-dark: #1e1e2f;
+      --text-light: #333;
+      --text-dark: #eee;
+    }
+
+    body {
+      background: var(--bg-gradient-dark);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--text-dark);
+      transition: all 0.3s ease;
+    }
+    .card {
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+      background: var(--card-bg-dark);
+      color: var(--text-dark);
+      padding: 2rem;
+    }
+    .btn-custom {
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+    .btn-custom:hover {
+      transform: scale(1.05);
+    }
+    .toggle-mode {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  </style>
 </head>
-<body class="bg-light text-center p-5">
-  <div class="container">
-    <h1 class="mb-4">Welcome to SBI Bank</h1>
-    <a href="/register" class="btn btn-primary m-2">Register</a>
-    <a href="/login" class="btn btn-success m-2">Login</a>
+<body>
+  <div class="toggle-mode">
+    <button class="btn btn-sm btn-light" onclick="toggleMode()">🌙 / ☀️</button>
   </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card text-center">
+          <h1 class="text-primary mb-4">Welcome to <i class="fas fa-university"></i> SBI Bank</h1>
+          <p class="mb-4">Manage your finances with ease and security.</p>
+          <div class="d-grid gap-3">
+            <a href="/register" class="btn btn-outline-primary btn-custom"><i class="fas fa-user-plus"></i> Create New Account</a>
+            <a href="/login" class="btn btn-primary btn-custom"><i class="fas fa-sign-in-alt"></i> Login to Your Account</a>
+            <a href="/dashboard" class="btn btn-outline-success btn-custom"><i class="fas fa-tachometer-alt"></i> View Dashboard</a>
+            <a href="/transactions" class="btn btn-outline-warning btn-custom"><i class="fas fa-money-check-alt"></i> Transactions</a>
+            <a href="/contact" class="btn btn-outline-secondary btn-custom"><i class="fas fa-envelope"></i> Contact Support</a>
+            <a href="/about" class="btn btn-outline-info btn-custom"><i class="fas fa-info-circle"></i> About SBI</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      const isDark = document.body.style.background.includes('2b5876');
+      document.body.style.background = isDark ? getComputedStyle(document.documentElement).getPropertyValue('--bg-gradient-light') : getComputedStyle(document.documentElement).getPropertyValue('--bg-gradient-dark');
+      const card = document.querySelector('.card');
+      card.style.background = isDark ? getComputedStyle(document.documentElement).getPropertyValue('--card-bg-light') : getComputedStyle(document.documentElement).getPropertyValue('--card-bg-dark');
+      card.style.color = isDark ? getComputedStyle(document.documentElement).getPropertyValue('--text-light') : getComputedStyle(document.documentElement).getPropertyValue('--text-dark');
+      document.body.style.color = isDark ? getComputedStyle(document.documentElement).getPropertyValue('--text-light') : getComputedStyle(document.documentElement).getPropertyValue('--text-dark');
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
