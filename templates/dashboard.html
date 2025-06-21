@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container mt-4">
+    <h2 class="mb-3">Welcome, {{ name }}</h2>
+    <p><strong>Account Number:</strong> {{ acc_no }}</p>
+    <p><strong>Balance:</strong> ₹{{ balance }}</p>
+
+    <hr>
+    <h4>Deposit</h4>
+    <form action="/deposit" method="post" class="mb-4">
+      <div class="row g-2">
+        <div class="col-md-6">
+          <input type="number" name="amount" class="form-control" placeholder="Amount" required>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-primary w-100">Deposit</button>
+        </div>
+      </div>
+    </form>
+
+    <h4>Withdraw</h4>
+    <form action="/withdraw" method="post" class="mb-4">
+      <div class="row g-2">
+        <div class="col-md-6">
+          <input type="number" name="amount" class="form-control" placeholder="Amount" required>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-danger w-100">Withdraw</button>
+        </div>
+      </div>
+    </form>
+
+    <h4>Transfer</h4>
+    <form action="/transfer" method="post" class="mb-4">
+      <input type="number" name="to_account" class="form-control mb-2" placeholder="To Account Number" required>
+      <input type="number" name="amount" class="form-control mb-2" placeholder="Amount" required>
+      <button class="btn btn-warning w-100">Transfer</button>
+    </form>
+
+    <a href="/transactions" class="btn btn-outline-secondary mt-3">Transaction History</a>
+    <a href="/" class="btn btn-outline-dark mt-3 float-end">Logout</a>
+  </div>
+</body>
+</html>
