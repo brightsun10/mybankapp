@@ -90,18 +90,6 @@ You can register a new account via the UI at /register. All actions like deposit
 
 ---
 
-## ✅ TODO / Improvements
-
-🔒 Password hashing with werkzeug.security
-
-📧 Email verification / password reset
-
-📱 Responsive UI with Bootstrap
-
-📊 Transaction charts or analytics
-
----
-
 ## 📃 License
 This project is licensed under the MIT License.
 
