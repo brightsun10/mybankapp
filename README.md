@@ -74,9 +74,11 @@ Link your GitHub repository.
 Set the Build Command:
 
 pip install -r requirements.txt
+
 Set the Start Command:
 
 gunicorn app:app
+
 Add a PostgreSQL Database on Render and attach its connectionString as the DATABASE_URL environment variable in render.yaml.
 
 The database tables will be created automatically on the first run.
