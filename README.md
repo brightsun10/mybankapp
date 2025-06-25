@@ -65,23 +65,24 @@ Open your browser at: http://localhost:5000
 This project is ready to deploy on Render.
 
 #### Steps:
-Push your code to GitHub.
 
-Create a new Web Service on Render.
+##### Push your code to GitHub.
 
-Link your GitHub repository.
+##### Create a new Web Service on Render.
 
-Set the Build Command:
+##### Link your GitHub repository.
+
+##### Set the Build Command:
 
 pip install -r requirements.txt
 
-Set the Start Command:
+##### Set the Start Command:
 
 gunicorn app:app
 
-Add a PostgreSQL Database on Render and attach its connectionString as the DATABASE_URL environment variable in render.yaml.
+##### Add a PostgreSQL Database on Render and attach its connectionString as the DATABASE_URL environment variable in render.yaml.
 
-The database tables will be created automatically on the first run.
+##### The database tables will be created automatically on the first run.
 
 ---
 
