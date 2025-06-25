@@ -28,12 +28,12 @@ A full-featured Flask-based banking application where users can register, log in
 
 ## 📦 Folder Structure
 
-├── app.py # Main Flask application
-├── templates/ # HTML templates
-├── static/ # Static files (CSS, images, etc.)
-├── requirements.txt # Python dependencies
-├── render.yaml # Render deployment config
-└── README.md # Project documentation
+app.py # Main Flask application
+templates/ # HTML templates
+static/ # Static files (CSS, images, etc.)
+requirements.txt # Python dependencies
+render.yaml # Render deployment config
+README.md # Project documentation
 
 
 ---
@@ -44,33 +44,27 @@ A full-featured Flask-based banking application where users can register, log in
 
 #### Clone the repo:
 
-```bash
 git clone https://github.com/your-username/flask-bank-app.git
 cd flask-bank-app
 
-Install dependencies:
-bash
-Copy
-Edit
+#### Install dependencies:
+
 pip install -r requirements.txt
-Set up environment variable:
-bash
-Copy
-Edit
+
+#### Set up environment variable:
+
 export DATABASE_URL="postgresql://<user>:<password>@<host>:<port>/<dbname>"
 Replace with your local or cloud PostgreSQL connection string.
 
-Run the app:
-bash
-Copy
-Edit
+#### Run the app:
+
 python app.py
 Open your browser at: http://localhost:5000
 
-2. 🚀 Deploy on Render
+### 2. 🚀 Deploy on Render
 This project is ready to deploy on Render.
 
-Steps:
+#### Steps:
 Push your code to GitHub.
 
 Create a new Web Service on Render.
@@ -79,24 +73,23 @@ Link your GitHub repository.
 
 Set the Build Command:
 
-nginx
-Copy
-Edit
 pip install -r requirements.txt
 Set the Start Command:
 
-nginx
-Copy
-Edit
 gunicorn app:app
 Add a PostgreSQL Database on Render and attach its connectionString as the DATABASE_URL environment variable in render.yaml.
 
 The database tables will be created automatically on the first run.
 
-🧪 Test Accounts
+---
+
+## 🧪 Test Accounts
 You can register a new account via the UI at /register. All actions like deposit, withdraw, transfer, and transaction history can be tested from the dashboard after login.
 
-✅ TODO / Improvements
+---
+
+## ✅ TODO / Improvements
+
 🔒 Password hashing with werkzeug.security
 
 📧 Email verification / password reset
@@ -105,11 +98,17 @@ You can register a new account via the UI at /register. All actions like deposit
 
 📊 Transaction charts or analytics
 
-📃 License
+---
+
+## 📃 License
 This project is licensed under the MIT License.
 
-🙋‍♂️ Author
+---
+
+## 🙋‍♂️ Author
 Nithin P
 📫 nithinpsea10@gmail.com
-🔗 LinkedIn
+
+---
+
 
