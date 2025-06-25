@@ -28,12 +28,12 @@ A full-featured Flask-based banking application where users can register, log in
 
 ## 📦 Folder Structure
 
-- |_app.py # Main Flask application
-- |_templates/ # HTML templates
-- |_static/ # Static files (CSS, images, etc.)
-- |_requirements.txt # Python dependencies
-- |_render.yaml # Render deployment config
-- |_README.md # Project documentation
+- app.py # Main Flask application
+- templates/ # HTML templates
+- static/ # Static files (CSS, images, etc.)
+- requirements.txt # Python dependencies
+- render.yaml # Render deployment config
+- README.md # Project documentation
 
 
 ---
