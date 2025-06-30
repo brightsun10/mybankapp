@@ -45,6 +45,7 @@ A full-featured Flask-based banking application where users can register, log in
 #### Clone the repo:
 
 git clone https://github.com/your-username/flask-bank-app.git
+
 cd flask-bank-app
 
 #### Install dependencies:
