@@ -100,8 +100,8 @@ This project is licensed under the MIT License.
 ---
 
 ## 🙋‍♂️ Author
-Nithin P
-📫 nithinpsea10@gmail.com
+
+Made with ❤️ by Nithin P (brightsun10)
 
 ---
 
