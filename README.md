@@ -55,11 +55,13 @@ pip install -r requirements.txt
 #### Set up environment variable:
 
 export DATABASE_URL="postgresql://<user>:<password>@<host>:<port>/<dbname>"
+
 Replace with your local or cloud PostgreSQL connection string.
 
 #### Run the app:
 
 python app.py
+
 Open your browser at: http://localhost:5000
 
 ### 2. 🚀 Deploy on Render
